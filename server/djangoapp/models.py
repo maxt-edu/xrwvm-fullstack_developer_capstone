@@ -47,8 +47,8 @@ class CarModel(models.Model):
         MaxValueValidator(2023),
         MinValueValidator(2015)
     ])
-    mileage = models.IntegerField()
-    dealer_id = models.IntegerField()
+    # mileage = models.IntegerField()
+    # dealer_id = models.IntegerField()
 
     def __str__(self):
-        return f'{self.make.name} {self.name}, {self.year}, {self.mileage}'
+        return f'{self.id}: {self.car_make.name} {self.name}, {self.year}'
