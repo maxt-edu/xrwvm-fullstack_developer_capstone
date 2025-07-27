@@ -77,8 +77,8 @@ app.get('/fetchDealers/:state', async (req, res) => {
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
   try {
-    const dealerships = await Dealerships.find({id: req.params.id});
-    res.json(dealerships);
+    const dealership = await Dealerships.findOne({id: req.params.id});
+    res.json(dealership);
   } catch(e) {
     res.status(500).json({ error: `Error fetching dealerships with id ${req.params.id}` });
   }
